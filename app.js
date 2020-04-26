@@ -8,15 +8,17 @@ const serverinfo = require('./info.json');
 //Sets the timeout to 2000ms (default)
 ssq.set_timeout(2000);
 
-//Variable to store the data recieved from the server
-var serverdata;
-
 //Should get the server data json
 ssq.info(serverinfo.serverip, serverinfo.serverport, (err, data) => {
+  //Error reporting
   console.error(err);
-  serverdata = data;
-  
-  console.log(`Playercount: ${serverdata.numplayers}/${serverdata.maxplayers} on ${serverdata.map}`);
+  //Variable to store the data recieved from the server
+  var serverdata = data;
 
+  //Couple of example test commands
+  console.log(`Player Count: ${serverdata.numplayers}/${serverdata.maxplayers} on ${serverdata.map}`);
+  console.log(`Server is running ${serverdata.gamedirectory} (id: ${serverdata.appid}) on version ${serverdata.gameversion}`)
+
+  //Outputs entire object
   console.log(serverdata);
 });
