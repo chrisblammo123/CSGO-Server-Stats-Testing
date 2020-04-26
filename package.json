@@ -1,0 +1,14 @@
+{
+  "name": "csgo-server-stats-testing",
+  "version": "1.0.0",
+  "description": "Testing stuff",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Chris Struck",
+  "license": "MIT",
+  "dependencies": {
+    "ssq": "0.0.1"
+  }
+}
