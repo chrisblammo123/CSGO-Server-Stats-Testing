@@ -6,8 +6,9 @@
 
 // Variables
 
-const ssq = require('node-ssq');              //Allows me to interface with csgo servers
+const ssq = require('ssq');              //Allows me to interface with csgo servers
 //'ssq' was not updated to latest from github repo, manually copied it over from 'https://github.com/gpittarelli/node-ssq' as 'node-ssq'
+//?????????
 const Discord = require('discord.js');        //Discord bot API
 const client = new Discord.Client();          //Discord bot client
 
@@ -26,12 +27,6 @@ client.on('ready', () => {
 	console.log('-----Starting Bot-----');
 	//Prints when the bot connects and its name
 	console.log('Connected as ' + client.user.tag + '\n');
-	//Lists servers that the bot is connected to
-	console.log('Servers:');
-	client.guilds.forEach((guild) => {
-		console.log(' - ' + guild.name);
-	});
-	console.log('');
 	client.user.setActivity(`0/0 Players on MAP`);
 });
 
@@ -86,8 +81,9 @@ client.on('message', (message) => {
           var serverdata = data;
 
           //Couple of example test commands
-          console.log(`Player Count: ${serverdata.numplayers}/${serverdata.maxplayers} on ${serverdata.map}`);
-          console.log(`Server is running ${serverdata.gamedirectory} (id: ${serverdata.appid}) on version ${serverdata.gameversion}`)
+          message.channel.send(`Player Count: ${serverdata.numplayers}/${serverdata.maxplayers} on ${serverdata.map}`);
+					//console.log(`Server is running ${serverdata.gamedirectory} (id: ${serverdata.appid}) on version ${serverdata.gameversion}`)
+					client.user.setActivity(`${serverdata.numplayers}/${serverdata.maxplayers} Players on ${serverdata.map}`);
 
           //Outputs entire object
           console.log(serverdata);

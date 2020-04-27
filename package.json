@@ -1,21 +1,23 @@
 {
   "name": "csgo-server-stats-testing",
   "version": "1.0.0",
-  "description": "Testing stuff",
+  "description": "Testing stuff with csgo server statistics and discord bots.",
   "main": "app.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Chris Struck",
-  "license": "MIT",
   "dependencies": {
+    "discord.js": "^12.2.0",
+    "node-ssq": "^0.0.1",
     "ssq": "0.0.1"
   },
   "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/chrisblammo123/csgo-server-stats-testing.git"
   },
+  "author": "Chris Struck",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/chrisblammo123/csgo-server-stats-testing/issues"
   },
